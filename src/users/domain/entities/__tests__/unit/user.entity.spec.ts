@@ -1,16 +1,11 @@
-import { faker } from '@faker-js/faker';
+import { UserDataBuilder } from '../../../testing/helpers/user-data-builder';
 import { UserEntity, UserPropos } from '../../user.entity';
 describe('User entities', () => {
   let props: UserPropos;
   let sut: UserEntity;
 
   beforeEach(() => {
-    props = {
-      email: faker.internet.email(),
-      name: faker.person.fullName(),
-      password: faker.internet.password(),
-    };
-
+    props = UserDataBuilder({});
     sut = new UserEntity(props);
   });
   it('should constructor method', () => {
