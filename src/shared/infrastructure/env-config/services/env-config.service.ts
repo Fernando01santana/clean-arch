@@ -4,7 +4,7 @@ https://docs.nestjs.com/providers#services
 
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { EnvConfig } from './env-config.interface';
+import { EnvConfig } from '../interfaces/env-config.interface';
 
 @Injectable()
 export class EnvConfigService implements EnvConfig {
