@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { UserPropos } from '../../entities/user.entity';
+import { UserProps } from '../../entities/user.entity';
 type Props = {
   name?: string;
   email?: string;
@@ -7,7 +7,7 @@ type Props = {
   createdAt?: Date;
 };
 
-export function UserDataBuilder(props: Props): UserPropos {
+export function UserDataBuilder(props: Props): UserProps {
   return {
     email: props.email ?? faker.internet.email(),
     name: props.name ?? faker.person.fullName(),

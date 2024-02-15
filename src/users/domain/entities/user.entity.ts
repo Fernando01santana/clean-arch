@@ -1,28 +1,34 @@
-export type UserPropos = {
+import { Entity } from '../../../shared/domain/entities/entity';
+
+export type UserProps = {
   name: string;
   email: string;
   password: string;
   createdAt?: Date;
 };
 
-export class UserEntity {
-  constructor(public readonly propos: UserPropos) {
-    this.propos.createdAt = this.propos.createdAt ?? new Date();
+export class UserEntity extends Entity<UserProps> {
+  constructor(
+    public readonly props: UserProps,
+    id?: string,
+  ) {
+    super(props, id);
+    this.props.createdAt = this.props.createdAt ?? new Date();
   }
 
   getEmail(): string {
-    return this.propos.email;
+    return this.props.email;
   }
 
   getPassword(): string {
-    return this.propos.password;
+    return this.props.password;
   }
 
   getCreatedAt(): Date {
-    return this.propos.createdAt;
+    return this.props.createdAt;
   }
 
   getName(): string {
-    return this.propos.name;
+    return this.props.name;
   }
 }

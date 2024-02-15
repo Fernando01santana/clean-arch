@@ -1,7 +1,7 @@
 import { UserDataBuilder } from '../../../testing/helpers/user-data-builder';
-import { UserEntity, UserPropos } from '../../user.entity';
+import { UserEntity, UserProps } from '../../user.entity';
 describe('User entities', () => {
-  let props: UserPropos;
+  let props: UserProps;
   let sut: UserEntity;
 
   beforeEach(() => {
@@ -9,10 +9,10 @@ describe('User entities', () => {
     sut = new UserEntity(props);
   });
   it('should constructor method', () => {
-    expect(sut.propos.name).toEqual(props.name);
-    expect(sut.propos.email).toEqual(props.email);
-    expect(sut.propos.password).toEqual(props.password);
-    expect(sut.propos.createdAt).toBeInstanceOf(Date);
+    expect(sut.props.name).toEqual(props.name);
+    expect(sut.props.email).toEqual(props.email);
+    expect(sut.props.password).toEqual(props.password);
+    expect(sut.props.createdAt).toBeInstanceOf(Date);
   });
 
   it('should return Name of user', () => {
