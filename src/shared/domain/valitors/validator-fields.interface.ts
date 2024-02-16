@@ -1,5 +1,5 @@
 export type FieldsError = {
-  [field: string]: [string];
+  [field: string]: string[];
 };
 
 export interface ValidatorFieldsInterface<PropsValidateds> {
